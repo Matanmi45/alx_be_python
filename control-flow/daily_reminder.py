@@ -8,4 +8,4 @@ match priority:
     case priority if time_bound == "no":
         print(f"Note: '{task}' is a {priority} priority task. Consider completing it when you have free time.")
     case _:
-        print("Incorrect response(s):choose from the options provided")
+        print("Kindly input your respones from the options provided")
