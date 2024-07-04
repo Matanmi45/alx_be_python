@@ -22,7 +22,7 @@ match temp_unit:
         farhenheit = convert_to_fahrenheit(temp)
         print(f"{temp}\N{DEGREE SIGN}C is {farhenheit}\N{DEGREE SIGN}F")
     case _:
-        print("Enter the correct letter F or C")
+        print("Invalid temperature. Please enter a numeric value.")
         #quit()
         
     
