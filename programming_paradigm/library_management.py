@@ -9,10 +9,10 @@ class Book:
     def __str__(self):
         return f"{self.title} by {self.author}"  
         
-    def check_out():
+    def check_out(self):
         self._is_checked_out = False
         
-    def return_book():
+    def return_book(self):
         self._is_checked_out = True
         
   
