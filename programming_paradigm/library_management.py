@@ -7,7 +7,14 @@ class Book:
         self._is_checked_out = False
         
     def __str__(self):
-        return f"{self.title} by {self.author}"    
+        return f"{self.title} by {self.author}"  
+        
+    def check_out():
+        self._is_checked_out = False
+        
+    def return_book():
+        self._is_checked_out = True
+        
   
     
 class Library():
@@ -20,26 +27,18 @@ class Library():
     
     def check_out_book(self, title):
         for book in self._book:
-            if title in book:
+            if title in str(book):
                 self._book.remove(book)
-                self._book[2] = True
+                #self._book[2] = True
         
     def return_book(self, title):
         for book in self._book:
-            if title in book:
+            if title in str(book):
                 self._book.append(book)
-                self._book[2] = False
+                #self._book[2] = False
                 
     def list_available_books(self):
         for book in self._book:
             print(book)
         
-library = Library()
-library.add_book(Book("Brave New World", "Aldous Huxley"))
-library.add_book(Book("1984", "George Orwell"))   
 
-library.list_available_books()
-        
-    
-    
-    
