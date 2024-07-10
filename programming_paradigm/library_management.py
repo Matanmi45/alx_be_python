@@ -1,3 +1,4 @@
+import copy
 class Book:
     
     def __init__(self, title, author):
@@ -19,11 +20,14 @@ class Book:
     
 class Library():
     
+    
     def __init__(self):
         self._book = []
+        self.copy_book = []
     
     def add_book(self, book):
         self._book.append(book)
+        self.copy_book = copy.deepcopy(self._book)
     
     def check_out_book(self, title):
         for book in self._book:
@@ -32,13 +36,12 @@ class Library():
                 #self._book[2] = True
         
     def return_book(self, title):
-        for book in self._book:
-            if title in str(book):
-                self._book.append(book)
-                #self._book[2] = False
-                
+        for copy_book in self.copy_book:
+            for book in self._book:
+                if copy_book != book and title in str(copy_book):
+                    self._book.append(copy_book)
+              
     def list_available_books(self):
         for book in self._book:
             print(book)
         
-
